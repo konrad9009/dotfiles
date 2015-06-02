@@ -17,7 +17,10 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/code
+export PROJECTS=~/work
+
+# editor setting
+export EDITOR=vim
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -51,7 +54,7 @@ done
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
-compinit
+compinit -u
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
