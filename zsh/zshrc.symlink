@@ -22,6 +22,10 @@ export PROJECTS=~/work
 # editor setting
 export EDITOR=vim
 
+# locale settings
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
 if [[ -a ~/.localrc ]]
@@ -63,3 +67,6 @@ do
 done
 
 unset config_files
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
