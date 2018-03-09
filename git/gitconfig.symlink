@@ -58,9 +58,16 @@
   ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
   co = checkout
   root = "!git rev-parse --show-toplevel"
-  
+	pushf = push --force-with-lease
+  dma = "!git branch --merged | egrep -v '(^\\*|master|dev)' | xargs git branch -d"
+  dall = "!git pull && git fetch -p && git dma"
+
+[rerere]
+  enabled = true
+
 [push]
-  default = simple
+	default = current
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
